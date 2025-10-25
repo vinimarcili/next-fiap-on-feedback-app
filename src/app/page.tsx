@@ -1,25 +1,9 @@
-import { Product } from '@/interfaces/product.interface';
 import { ProductCard } from '@/components/ProductCard';
-
-async function getProducts(): Promise<Product[]> {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/products`, {
-      cache: 'no-store'
-    });
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch products');
-    }
-
-    return res.json();
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    return [];
-  }
-}
+import { Product } from '@/interfaces/product.interface';
 
 export default async function Home() {
-  const products = await getProducts();
+  // TODO: implementar
+  const products: Product[] = [];
 
   return (
      <div>

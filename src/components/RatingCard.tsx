@@ -1,9 +1,4 @@
-interface Rating {
-  id: string;
-  username: string;
-  text: string;
-  rating: number;
-}
+import { Rating } from "@/interfaces/rating.interface";
 
 interface RatingCardProps {
   rating: Rating;

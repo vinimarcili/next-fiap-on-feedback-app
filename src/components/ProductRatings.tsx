@@ -1,15 +1,8 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import { RatingCard } from './RatingCard';
-import { AddRatingDialog } from './AddRatingDialog';
-
-interface Rating {
-  id: string;
-  username: string;
-  text: string;
-  rating: number;
-}
+import { Rating } from '@/interfaces/rating.interface';
 
 interface ProductRatingsProps {
   productId: string;
@@ -17,40 +10,22 @@ interface ProductRatingsProps {
 
 export function ProductRatings({ productId }: ProductRatingsProps) {
   const [ratings, setRatings] = useState<Rating[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  // TODO: default true
+  const [loading, setLoading] = useState(false);
+  // TODO: implementar
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const fetchRatings = useCallback(() => {
-    fetch(`/api/products/${productId}/ratings`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Erro ao buscar avaliações');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setRatings(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching ratings:', error);
-        setError('Erro ao carregar avaliações');
-        setLoading(false);
-      });
+    // TODO: implementar
   }, [productId]);
 
   useEffect(() => {
     fetchRatings();
   }, [fetchRatings]);
 
-  const handleRatingAdded = () => {
-    fetchRatings();
-  };
-
-  const averageRating = ratings.length > 0
-    ? ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratings.length
-    : 0;
+  const averageRating = useMemo(
+    () => (ratings.length > 0 ? ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratings.length : 0), [ratings]
+  );
 
   if (loading) {
     return (
@@ -64,17 +39,6 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
     );
   }
 
-  if (error) {
-    return (
-      <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 text-center">
-        <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-red-600 text-xl">⚠️</span>
-        </div>
-        <h3 className="text-lg font-semibold text-red-800 mb-2">Erro ao carregar avaliações</h3>
-        <p className="text-red-600">{error}</p>
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-8">
@@ -135,13 +99,6 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
           </div>
         )}
       </div>
-
-      <AddRatingDialog
-        productId={productId}
-        isOpen={isDialogOpen}
-        onClose={() => setIsDialogOpen(false)}
-        onRatingAdded={handleRatingAdded}
-      />
     </div>
   );
 }
