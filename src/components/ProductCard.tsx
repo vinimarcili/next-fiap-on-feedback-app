@@ -28,7 +28,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h2>
 
-          <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+          <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed min-h-12">
             {product.description}
           </p>
 
@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
               <span className="text-xs text-gray-500 mt-1">à vista</span>
             </div>
 
-            <div className="bg-linear-to-r from-blue-600 to-indigo-600 group-hover:from-blue-700 group-hover:to-indigo-700 text-white p-2 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg group-hover:shadow-xl">
+            <div className="bg-blue-600 text-white p-2 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg group-hover:shadow-xl">
               Ver Produto
             </div>
           </div>

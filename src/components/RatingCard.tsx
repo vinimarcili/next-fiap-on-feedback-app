@@ -11,7 +11,7 @@ interface RatingCardProps {
 
 export function RatingCard({ rating }: RatingCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-gray-100 transition-all duration-300 hover:scale-[1.01]">
+    <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-linear-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center shadow-sm">

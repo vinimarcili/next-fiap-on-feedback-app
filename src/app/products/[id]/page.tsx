@@ -78,13 +78,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          <ProductRatings productId={id} />
-
-          <div className="mt-8 space-y-4">
-            <button disabled={true} className="w-full bg-gray-500 text-gray-300 cursor-not-allowed py-4 px-8 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg">
+          <div className="my-8 space-y-4">
+            <button disabled={true} className="w-full bg-gray-300 text-white cursor-not-allowed py-4 px-8 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg">
               Fora de estoque
             </button>
           </div>
+
+          <ProductRatings productId={id} />
         </div>
       </div>
     </div>

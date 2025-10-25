@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { RatingCard } from './RatingCard';
+import { AddRatingDialog } from './AddRatingDialog';
 
 interface Rating {
   id: string;
@@ -18,8 +19,9 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
   const [ratings, setRatings] = useState<Rating[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  useEffect(() => {
+  const fetchRatings = useCallback(() => {
     fetch(`/api/products/${productId}/ratings`)
       .then(res => {
         if (!res.ok) {
@@ -37,6 +39,14 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
         setLoading(false);
       });
   }, [productId]);
+
+  useEffect(() => {
+    fetchRatings();
+  }, [fetchRatings]);
+
+  const handleRatingAdded = () => {
+    fetchRatings();
+  };
 
   const averageRating = ratings.length > 0
     ? ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratings.length
@@ -72,10 +82,19 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
         <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-100">
           <div className="flex items-center justify-between mb-0">
             <h3 className="text-xl font-bold text-gray-900 mb-0">Avaliações dos Clientes</h3>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <span className="text-2xl">⭐</span>
-              <span className="font-bold text-gray-900">{averageRating.toFixed(1)}</span>
-              <span className="text-gray-600">({ratings.length})</span>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="cursor-pointer bg-blue-600 text-white p-2 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg group-hover:shadow-xl"
+              >
+                <span className="text-lg">✏️</span>
+                <span>Avaliar Produto</span>
+              </button>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <span className="text-2xl">⭐</span>
+                <span className="font-bold text-gray-900">{averageRating.toFixed(1)}</span>
+                <span className="text-gray-600">({ratings.length})</span>
+              </div>
             </div>
           </div>
 
@@ -116,6 +135,13 @@ export function ProductRatings({ productId }: ProductRatingsProps) {
           </div>
         )}
       </div>
+
+      <AddRatingDialog
+        productId={productId}
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        onRatingAdded={handleRatingAdded}
+      />
     </div>
   );
 }
