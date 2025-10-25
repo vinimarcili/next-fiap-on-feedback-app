@@ -58,5 +58,6 @@ export const ratings: Record<string, Rating[]> = {
       text: 'Jogos carregam rápido, gráficos incríveis!',
       rating: 5
     }
-  ]
+  ],
+  '6': []
 };
