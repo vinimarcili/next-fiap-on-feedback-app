@@ -1,0 +1,37 @@
+/* RatingStats.css */
+.rating-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rating-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-stats-stars {
+  display: flex;
+}
+
+.rating-stats-star {
+  font-size: 2rem;
+}
+
+.rating-stats-star.filled {
+  color: #facc15;
+  /* yellow-400 */
+}
+
+.rating-stats-star.empty {
+  color: #d1d5db;
+  /* gray-300 */
+}
+
+.rating-stats-count {
+  color: #4b5563;
+  /* gray-600 */
+  margin-left: 0.5rem;
+}

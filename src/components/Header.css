@@ -1,0 +1,45 @@
+/* Header.css */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-icon-bg {
+  display: inline-block;
+  padding: 0.75rem;
+  background: #dbeafe;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.header-icon {
+  width: 5rem;
+  height: 5rem;
+  background: #2563eb;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon-emoji {
+  font-size: 1.875rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.header-title-accent {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+  display: block;
+}

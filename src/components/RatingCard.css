@@ -1,0 +1,85 @@
+/* RatingCard.css */
+.rating-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  border: 1px solid #f3f4f6;
+}
+
+.rating-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.rating-card-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-card-avatar {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #818cf8 100%);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.rating-card-avatar-initial {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.rating-card-user-info {}
+
+.rating-card-username {
+  font-weight: bold;
+  color: #111827;
+  font-size: 1.125rem;
+}
+
+.rating-card-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.rating-card-stars {
+  display: flex;
+}
+
+.rating-card-star {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  filter: none;
+}
+
+.rating-card-star.filled {
+  color: #facc15;
+  filter: drop-shadow(0 1px 2px #facc15aa);
+}
+
+.rating-card-rating {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.rating-card-divider {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.rating-card-text {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}

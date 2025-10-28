@@ -1,0 +1,137 @@
+.ratings-section {
+  margin-bottom: 32px;
+}
+
+.ratings-summary {
+  background: linear-gradient(90deg, #eff6ff, #e0e7ff 60%, #6366f1 100%);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  margin-bottom: 0;
+}
+
+.ratings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ratings-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+.ratings-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ratings-btn {
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px 0 rgba(99, 102, 241, 0.12);
+  transition: box-shadow 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ratings-btn:hover {
+  background: #1e40af;
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.18);
+}
+
+.ratings-average {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+}
+
+.ratings-average .star {
+  font-size: 2rem;
+}
+
+.ratings-average .value {
+  font-weight: bold;
+  color: #111827;
+}
+
+.ratings-average .count {
+  color: #4b5563;
+}
+
+.ratings-stars {
+  display: flex;
+}
+
+.ratings-stars .star {
+  font-size: 2rem;
+  margin-right: 2px;
+}
+
+.ratings-stars .star.filled {
+  color: #fbbf24;
+  filter: drop-shadow(0 1px 2px #fbbf24);
+}
+
+.ratings-stars .star.empty {
+  color: #d1d5db;
+}
+
+.ratings-base {
+  color: #4b5563;
+  margin-left: 8px;
+}
+
+.ratings-list {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.ratings-empty {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  padding: 48px;
+  text-align: center;
+  border: 2px dashed #e5e7eb;
+}
+
+.ratings-empty-icon {
+  width: 64px;
+  height: 64px;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
+
+.ratings-empty-icon span {
+  font-size: 2rem;
+}
+
+.ratings-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.ratings-empty-text {
+  color: #4b5563;
+  font-size: 1rem;
+}

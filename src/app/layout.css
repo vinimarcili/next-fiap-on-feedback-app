@@ -1,0 +1,18 @@
+/* layout.css */
+.layout-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 50%, #6366f1 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

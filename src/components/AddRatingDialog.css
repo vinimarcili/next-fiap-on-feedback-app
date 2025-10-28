@@ -1,0 +1,192 @@
+/* AddRatingDialog.css */
+.add-rating-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.add-rating-dialog {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  max-width: 28rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.add-rating-dialog-content {
+  padding: 2rem;
+}
+
+.add-rating-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.add-rating-dialog-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.add-rating-dialog-close {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  background: #f3f4f6;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.add-rating-dialog-close:hover {
+  background: #e5e7eb;
+}
+
+.add-rating-dialog-close-icon {
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+.add-rating-dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-rating-dialog-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.add-rating-dialog-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-rating-dialog-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #2563eb33;
+}
+
+.add-rating-dialog-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-rating-dialog-star-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s, filter 0.2s;
+}
+
+.add-rating-dialog-star {
+  cursor: pointer;
+  color: #d1d5db;
+  filter: none;
+}
+
+.add-rating-dialog-star.filled {
+  color: #facc15;
+  filter: drop-shadow(0 1px 2px #facc15aa);
+}
+
+.add-rating-dialog-stars-count {
+  margin-left: 0.5rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.add-rating-dialog-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 1rem;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-rating-dialog-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #2563eb33;
+}
+
+.add-rating-dialog-error {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.add-rating-dialog-error-text {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.add-rating-dialog-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.add-rating-dialog-cancel {
+  cursor: pointer;
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  border: none;
+}
+
+.add-rating-dialog-cancel:hover {
+  background: #e5e7eb;
+}
+
+.add-rating-dialog-submit {
+  cursor: pointer;
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+  color: #fff;
+  border-radius: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.15);
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s, opacity 0.2s;
+}
+
+.add-rating-dialog-submit:hover {
+  background: linear-gradient(90deg, #1d4ed8 0%, #4338ca 100%);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.25);
+  transform: scale(1.02);
+}
+
+.add-rating-dialog-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

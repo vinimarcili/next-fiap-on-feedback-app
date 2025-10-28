@@ -1,3 +1,5 @@
+import './RatingStats.css';
+
 interface RatingStatsProps {
   average: number;
   count: number;
@@ -5,23 +7,19 @@ interface RatingStatsProps {
 
 export function RatingStats({ average, count }: RatingStatsProps) {
   return (
-    <div className="flex items-center gap-4 mb-6">
-      <div className="flex items-center gap-2">
-        <div className="flex">
+    <div className="rating-stats">
+      <div className="rating-stats-group">
+        <div className="rating-stats-stars">
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
-              className={`text-2xl ${
-                star <= Math.round(average)
-                  ? 'text-yellow-400'
-                  : 'text-gray-300'
-              }`}
+              className={`rating-stats-star ${star <= Math.round(average) ? 'filled' : 'empty'}`}
             >
               ★
             </span>
           ))}
         </div>
-        <span className="text-gray-600 ml-2">
+        <span className="rating-stats-count">
           ({count} avaliação{count !== 1 ? 's' : ''})
         </span>
       </div>

@@ -1,8 +1,10 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductRatings } from '@/components/ProductRatings';
 import { Product } from '@/interfaces/product.interface';
+import './product-page.css';
 
 async function getProduct(id: string): Promise<Product | null> {
   try {
@@ -34,52 +36,50 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 w-full">
-      <div className="lg:flex">
-        <div className="lg:w-1/2 relative">
-          <div className="relative h-96 lg:h-full bg-linear-to-br from-gray-100 to-gray-200">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-          </div>
+    <div className="product-page">
+      <div className="product-page-layout">
+        <div className="product-page-image">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="product-page-img"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
         </div>
 
-        <div className="lg:w-1/2 p-8 lg:p-12">
+        <div className="product-page-details">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 transition-colors group"
+            className="product-page-back"
           >
-            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-              <span className="text-sm">←</span>
+            <div className="product-page-back-icon">
+              <span className="product-page-back-arrow">←</span>
             </div>
-            <span className="font-medium">Voltar para produtos</span>
+            <span className="product-page-back-text">Voltar para produtos</span>
           </Link>
 
-          <div className="mb-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <div className="product-page-title-block">
+            <h1 className="product-page-title">
               {product.name}
             </h1>
           </div>
 
-          <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+          <p className="product-page-desc">
             {product.description}
           </p>
 
-          <div className="mb-8">
-            <div className="flex items-baseline gap-4 mb-4">
-              <span className="text-5xl font-bold text-blue-600">
+          <div className="product-page-price-block">
+            <div className="product-page-price">
+              <span className="product-page-price-value">
                 R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
               </span>
             </div>
           </div>
 
-          <div className="my-8 space-y-4">
-            <button disabled={true} className="w-full bg-gray-300 text-white cursor-not-allowed py-4 px-8 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg">
+          <div className="product-page-stock">
+            <button disabled={true} className="product-page-stock-btn">
               Fora de estoque
             </button>
           </div>
