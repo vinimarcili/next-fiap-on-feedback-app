@@ -1,0 +1,31 @@
+.footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.footer-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: #fff;
+  border-radius: 9999px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.3s;
+}
+
+.footer-content:hover {
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+}
+
+.footer-icon {
+  color: #4b5563;
+  font-size: 1.25rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #4b5563;
+  font-weight: 500;
+}

@@ -1,46 +1,45 @@
 import { Product } from '@/interfaces/product.interface';
 import Image from 'next/image';
 import Link from 'next/link';
+import './ProductCard.css';
 
 interface ProductCardProps {
   product: Product;
 }
-
-export function ProductCard({ product }: ProductCardProps) {
-  return (
-    <Link href={`/products/${product.id}`} className="group block">
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] border border-gray-100">
-        <div className="relative h-64 bg-linear-to-br from-gray-100 to-gray-200 overflow-hidden">
+export function ProductCard({ product }: ProductCardProps) {  return (
+    <Link href={`/products/${product.id}`} className="product-link">
+      <div className="product-card">
+        <div className="product-image-bg">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="product-image"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
-          <div className="absolute top-4 right-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="text-gray-600 text-sm font-medium">Ver detalhes</span>
+          <div className="product-image-overlay"></div>
+          <div className="product-details-btn">
+            Ver detalhes
           </div>
         </div>
 
-        <div className="p-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+        <div className="product-content">
+          <h2 className="product-title">
             {product.name}
           </h2>
 
-          <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed min-h-12">
+          <p className="product-description">
             {product.description}
           </p>
 
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <span className="text-3xl font-bold text-blue-600 leading-none">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="product-price">
                 R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
               </span>
-              <span className="text-xs text-gray-500 mt-1">à vista</span>
+              <span className="product-price-info">à vista</span>
             </div>
 
-            <div className="bg-blue-600 text-white p-2 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg group-hover:shadow-xl">
+            <div className="product-btn">
               Ver Produto
             </div>
           </div>

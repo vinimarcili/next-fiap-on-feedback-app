@@ -1,0 +1,44 @@
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-icon-bg {
+  display: inline-block;
+  padding: 12px;
+  background: #dbeafe;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.header-icon {
+  width: 80px;
+  height: 80px;
+  background: #2563eb;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon span {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+.header-title-gradient {
+  color: transparent;
+  background: linear-gradient(90deg, #2563eb, #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: block;
+}

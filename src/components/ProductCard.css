@@ -1,0 +1,119 @@
+.product-link {
+  display: block;
+  text-decoration: none;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #f3f4f6;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+  transform: scale(1.02);
+}
+
+.product-image-bg {
+  position: relative;
+  height: 256px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  overflow: hidden;
+}
+
+.product-image {
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1);
+}
+
+.product-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s;
+}
+
+.product-card:hover .product-image-overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.product-details-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #fff;
+  opacity: 0.9;
+  border-radius: 9999px;
+  padding: 8px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.product-card:hover .product-details-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-content {
+  padding: 32px;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.product-title:hover {
+  color: #2563eb;
+}
+
+.product-description {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  min-height: 48px;
+  line-height: 1.5;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  line-height: 1;
+}
+
+.product-price-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.product-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px 0 rgba(99, 102, 241, 0.12);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.product-card:hover .product-btn {
+  background: #1e40af;
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.18);
+}
